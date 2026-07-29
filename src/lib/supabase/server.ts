@@ -17,8 +17,16 @@ export async function createClient() {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
             );
-          } catch {
-            // Called from a Server Component — cookie writes are ignored.
+          } catch (error) {
+            if (
+              error instanceof Error &&
+              "digest" in error &&
+              error.digest === "NEXT_SERVER_COMPONENT_COOKIE_MUTATION"
+            ) {
+              // Expected when called from a Server Component.
+              return;
+            }
+            throw error;
           }
         },
       },
