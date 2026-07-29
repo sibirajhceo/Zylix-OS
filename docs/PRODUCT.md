@@ -1,5 +1,7 @@
 # Zylix OS — Product
 
+**Canonical source: [prodSpec.md](../prodSpec.md)**
+
 ## First User
 
 Sibirajh — a founder who runs a creative studio (Zylix Edit House), manages client projects, handles college responsibilities, and builds personal products.

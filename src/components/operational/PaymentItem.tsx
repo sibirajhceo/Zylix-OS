@@ -1,6 +1,6 @@
 import { Payment } from "@/types";
 import { formatCurrency, formatDate, getStatusColor } from "@/lib/utils";
-import { Icon } from "@/components/ui/Icon";
+import { CurrencyInr } from "@phosphor-icons/react/ssr";
 
 const stateLabels: Record<string, string> = {
   pending: "Pending",
@@ -14,7 +14,7 @@ export function PaymentCard({ payment }: { payment: Payment }) {
     <div className="rounded-lg border border-border bg-surface p-4 transition-colors">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3 min-w-0">
-          <Icon name="CurrencyInr" size={18} className="text-muted mt-0.5 shrink-0" weight="regular" />
+          <CurrencyInr size={18} className="text-muted mt-0.5 shrink-0" weight="regular" />
           <div className="min-w-0">
             <h3 className="text-sm font-medium text-text-primary">
               {payment.client}

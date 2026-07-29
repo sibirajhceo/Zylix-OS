@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Icon } from "@/components/ui/Icon";
+import { Hourglass } from "@phosphor-icons/react/ssr";
 import { mockWaitingItems } from "@/data/mock-waiting";
 import { WaitingItemCard } from "@/components/operational/WaitingItem";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -19,7 +19,7 @@ export default function WaitingPage() {
     return (
       <div className="p-4 lg:p-6 max-w-3xl mx-auto">
         <EmptyState
-          icon="Hourglass"
+          icon={<Hourglass size={32} weight="light" />}
           title="Nothing waiting"
           description="You're not waiting on anything right now."
         />
@@ -30,7 +30,7 @@ export default function WaitingPage() {
   return (
     <div className="p-4 lg:p-6 max-w-3xl mx-auto">
       <div className="flex items-center gap-2.5 mb-6">
-        <Icon name="Hourglass" size={20} className="text-accent" weight="fill" />
+        <Hourglass size={20} className="text-accent" weight="fill" />
         <h1 className="text-lg font-semibold tracking-tight">Waiting</h1>
       </div>
 

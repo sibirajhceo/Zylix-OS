@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Icon } from "@/components/ui/Icon";
+import { CalendarCheck } from "@phosphor-icons/react/ssr";
 import { focusTasks, remainingTasks, overdueTasks } from "@/data/mock-tasks";
 import { TaskCard } from "@/components/operational/TaskCard";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -17,7 +17,7 @@ export default function TodayPage() {
     return (
       <div className="p-4 lg:p-6 max-w-3xl mx-auto">
         <EmptyState
-          icon="CalendarCheck"
+          icon={<CalendarCheck size={32} weight="light" />}
           title="No tasks for today"
           description="Everything is up to date. Use the assistant to add new tasks."
         />
@@ -28,7 +28,7 @@ export default function TodayPage() {
   return (
     <div className="p-4 lg:p-6 max-w-3xl mx-auto">
       <div className="flex items-center gap-2.5 mb-6">
-        <Icon name="CalendarCheck" size={20} className="text-accent" weight="fill" />
+        <CalendarCheck size={20} className="text-accent" weight="fill" />
         <h1 className="text-lg font-semibold tracking-tight">Today</h1>
       </div>
 

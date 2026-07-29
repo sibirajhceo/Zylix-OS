@@ -11,6 +11,7 @@
     "format": "next lint --fix"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "next": "16.2.12",
     "react": "19.2.4",
     "react-dom": "19.2.4"

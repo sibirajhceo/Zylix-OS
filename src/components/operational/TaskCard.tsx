@@ -1,12 +1,17 @@
 import { Task } from "@/types";
 import { formatDate } from "@/lib/utils";
-import { Icon } from "@/components/ui/Icon";
-
-const categoryIcons: Record<string, string> = {
-  money: "CurrencyInr",
-  delivery: "Truck",
-  personal: "User",
-  growth: "TrendUp",
+import {
+  CurrencyInr,
+  Truck,
+  User,
+  TrendUp,
+  ClockCounterClockwise,
+} from "@phosphor-icons/react/ssr";
+const categoryIcons: Record<string, React.ElementType> = {
+  money: CurrencyInr,
+  delivery: Truck,
+  personal: User,
+  growth: TrendUp,
 };
 
 const categoryColors: Record<string, string> = {
@@ -23,7 +28,7 @@ export function TaskCard({
   task: Task;
   isPriority?: boolean;
 }) {
-  const iconName = categoryIcons[task.category];
+  const CategoryIcon = categoryIcons[task.category];
 
   return (
     <div
@@ -32,8 +37,7 @@ export function TaskCard({
       } p-3.5 transition-colors`}
     >
       <div className="flex items-start gap-3">
-        <Icon
-          name={iconName}
+        <CategoryIcon
           size={16}
           className={`${categoryColors[task.category]} mt-0.5 shrink-0`}
           weight="fill"
@@ -48,7 +52,7 @@ export function TaskCard({
           <div className="flex flex-wrap items-center gap-3 mt-2">
             {task.estimatedMinutes && (
               <span className="flex items-center gap-1 text-xs text-muted">
-                <Icon name="ClockCounterClockwise" size={12} weight="regular" />
+                <ClockCounterClockwise size={12} weight="regular" />
                 {task.estimatedMinutes}m
               </span>
             )}

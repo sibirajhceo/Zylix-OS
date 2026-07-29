@@ -2,15 +2,24 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Icon } from "@/components/ui/Icon";
+import {
+  ChatCircleDots,
+  CalendarCheck,
+  Folder,
+  Hourglass,
+  CurrencyInr,
+  ClockCounterClockwise,
+  SignOut,
+  Command,
+} from "@phosphor-icons/react/ssr";
 
 const navItems = [
-  { href: "/", label: "Assistant", icon: "ChatCircleDots" },
-  { href: "/today", label: "Today", icon: "CalendarCheck" },
-  { href: "/projects", label: "Projects", icon: "Folder" },
-  { href: "/waiting", label: "Waiting", icon: "Hourglass" },
-  { href: "/payments", label: "Payments", icon: "CurrencyInr" },
-  { href: "/activity", label: "Activity", icon: "ClockCounterClockwise" },
+  { href: "/", label: "Assistant", icon: ChatCircleDots },
+  { href: "/today", label: "Today", icon: CalendarCheck },
+  { href: "/projects", label: "Projects", icon: Folder },
+  { href: "/waiting", label: "Waiting", icon: Hourglass },
+  { href: "/payments", label: "Payments", icon: CurrencyInr },
+  { href: "/activity", label: "Activity", icon: ClockCounterClockwise },
 ];
 
 export function Sidebar() {
@@ -23,7 +32,7 @@ export function Sidebar() {
       aria-label="Main navigation"
     >
       <div className="flex items-center gap-2.5 px-5 h-14 border-b border-border">
-        <Icon name="Command" size={18} className="text-accent" weight="fill" />
+        <Command size={18} className="text-accent" weight="fill" />
         <span className="text-sm font-semibold tracking-tight">Zylix OS</span>
         <span className="ml-auto px-1.5 py-0.5 text-[10px] font-mono text-muted border border-border rounded">
           α
@@ -33,6 +42,7 @@ export function Sidebar() {
       <div className="flex-1 flex flex-col gap-0.5 p-2">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
+          const IconComponent = item.icon;
 
           return (
             <Link
@@ -45,8 +55,7 @@ export function Sidebar() {
               }`}
               aria-current={isActive ? "page" : undefined}
             >
-              <Icon
-                name={item.icon}
+              <IconComponent
                 size={18}
                 weight={isActive ? "fill" : "regular"}
               />
@@ -61,7 +70,7 @@ export function Sidebar() {
           href="/login"
           className="flex items-center gap-2.5 px-3 py-2 rounded-md text-sm text-muted hover:text-text-secondary hover:bg-surface-elevated transition-colors"
         >
-          <Icon name="SignOut" size={18} weight="regular" />
+          <SignOut size={18} weight="regular" />
           Sign out
         </Link>
       </div>

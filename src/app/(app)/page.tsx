@@ -1,4 +1,4 @@
-import { Icon } from "@/components/ui/Icon";
+import { Command } from "@phosphor-icons/react/ssr";
 import { MessageComposer } from "@/components/assistant/MessageComposer";
 import { SuggestedPrompts } from "@/components/assistant/SuggestedPrompts";
 import { focusTasks } from "@/data/mock-tasks";
@@ -15,7 +15,7 @@ export default function HomePage() {
     <div className="flex flex-col lg:flex-row min-h-dvh">
       <div className="flex-1 flex flex-col min-w-0 max-w-3xl mx-auto w-full px-4 lg:px-6 py-4 lg:py-6">
         <div className="flex items-center gap-2.5 mb-6">
-          <Icon name="Command" size={20} className="text-accent" weight="fill" />
+          <Command size={20} className="text-accent" weight="fill" />
           <h1 className="text-lg font-semibold tracking-tight">Assistant</h1>
         </div>
 

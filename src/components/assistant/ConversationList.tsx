@@ -1,6 +1,6 @@
 import { mockConversations } from "@/data/mock-conversations";
 import { formatRelativeTime } from "@/lib/utils";
-import { Icon } from "@/components/ui/Icon";
+import { ChatCircleDots } from "@phosphor-icons/react/ssr";
 
 export function ConversationList() {
   return (
@@ -10,8 +10,7 @@ export function ConversationList() {
           key={conv.id}
           className="w-full flex items-start gap-3 px-3 py-2.5 rounded-lg text-left hover:bg-surface-elevated transition-colors"
         >
-          <Icon
-            name="ChatCircleDots"
+          <ChatCircleDots
             size={18}
             className="text-muted mt-0.5 shrink-0"
             weight="regular"

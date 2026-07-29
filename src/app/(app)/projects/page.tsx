@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Icon } from "@/components/ui/Icon";
+import { Folder } from "@phosphor-icons/react/ssr";
 import { mockProjects } from "@/data/mock-projects";
 import { ProjectCard } from "@/components/operational/ProjectCard";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
     return (
       <div className="p-4 lg:p-6 max-w-3xl mx-auto">
         <EmptyState
-          icon="Folder"
+          icon={<Folder size={32} weight="light" />}
           title="No projects yet"
           description="Projects will appear here once you create them."
         />
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
   return (
     <div className="p-4 lg:p-6 max-w-3xl mx-auto">
       <div className="flex items-center gap-2.5 mb-6">
-        <Icon name="Folder" size={20} className="text-accent" weight="fill" />
+        <Folder size={20} className="text-accent" weight="fill" />
         <h1 className="text-lg font-semibold tracking-tight">Projects</h1>
       </div>
 

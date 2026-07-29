@@ -1,5 +1,7 @@
 # Zylix OS — Architecture
 
+**Canonical build plan: [buildPlan.md](../buildPlan.md)**
+
 ## Current Architecture (Milestone 0)
 
 ### Frontend
@@ -62,19 +64,36 @@ src/
 - Streaming chat responses
 - Natural-language parsing into structured actions
 
-### Milestone 5: Conversational Memory
+### Milestone 5: Confirmations, Activity History and Undo
+
+- Confirmation dialogs before destructive actions
+- Activity history with timestamps
+- Undo support for recent mutations
+
+### Milestone 6: Memory, Today Planning and Weekly Review
 
 - Long-term memory stored in database
 - Context injection into AI prompts
 - Conversation continuity across sessions
+- Today planning workflow
+- Weekly review automation
 
-### Milestones 6-8: PWA, Production Hardening
+### Milestone 7: PWA and Cross-Device Hardening
 
 - Installable PWA with service worker
 - Offline-capable data access
 - Device testing (Mac, Android, iOS)
 - Performance optimisation
+- API route hardening
+- Rate limiting
+
+### Milestone 8: Production Hardening
+
+- Comprehensive testing
+- Accessibility audit
 - Security audit
+- Performance budget
+- Deployment automation
 
 ## Separation of Concerns
 

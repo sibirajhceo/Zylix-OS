@@ -1,17 +1,25 @@
 import { ActivityRecord } from "@/types";
 import { formatRelativeTime } from "@/lib/utils";
-import { Icon } from "@/components/ui/Icon";
-
-const actionIcons: Record<string, string> = {
-  task_created: "PlusCircle",
-  task_completed: "CheckCircle",
-  project_paused: "Pause",
-  payment_recorded: "CurrencyInr",
-  deadline_updated: "CalendarCheck",
-  moved_to_waiting: "Hourglass",
-  ai_suggestion: "Lightbulb",
-  project_created: "Folder",
-  payment_received: "CurrencyInr",
+import {
+  CheckCircle,
+  PlusCircle,
+  Pause,
+  CurrencyInr,
+  CalendarCheck,
+  Hourglass,
+  Lightbulb,
+  Folder,
+} from "@phosphor-icons/react/ssr";
+const actionIcons: Record<string, React.ElementType> = {
+  task_created: PlusCircle,
+  task_completed: CheckCircle,
+  project_paused: Pause,
+  payment_recorded: CurrencyInr,
+  deadline_updated: CalendarCheck,
+  moved_to_waiting: Hourglass,
+  ai_suggestion: Lightbulb,
+  project_created: Folder,
+  payment_received: CurrencyInr,
 };
 
 const actionColors: Record<string, string> = {
@@ -31,14 +39,13 @@ export function ActivityRecordCard({
 }: {
   record: ActivityRecord;
 }) {
-  const iconName = actionIcons[record.actionType];
+  const IconComponent = actionIcons[record.actionType];
 
   return (
     <div className="flex items-start gap-3 py-3">
       <div className="flex flex-col items-center gap-1">
-        {iconName && (
-          <Icon
-            name={iconName}
+        {IconComponent && (
+          <IconComponent
             size={16}
             className={`${actionColors[record.actionType] ?? "text-muted"} mt-0.5 shrink-0`}
             weight="fill"

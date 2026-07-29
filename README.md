@@ -50,9 +50,9 @@ src/
   lib/           — Utilities
   types/         — TypeScript types
 docs/
-  PRODUCT.md     — Product definition
+  PRODUCT.md     — Product definition (canonical source: [/prodSpec.md](./prodSpec.md))
   ARCHITECTURE.md— Architecture decisions
-  ROADMAP.md     — Milestone plan
+  ROADMAP.md     — Milestone plan (canonical source: [/buildPlan.md](./buildPlan.md))
 ```
 
 ## Deployment Notes

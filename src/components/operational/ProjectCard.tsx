@@ -1,6 +1,6 @@
 import { Project } from "@/types";
 import { formatDate, getHealthColor, getStatusColor } from "@/lib/utils";
-import { Icon } from "@/components/ui/Icon";
+import { Folder, ArrowRight } from "@phosphor-icons/react/ssr";
 
 const statusLabels: Record<string, string> = {
   active: "Active",
@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <div className="rounded-lg border border-border bg-surface p-4 transition-colors">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-2.5 min-w-0">
-          <Icon name="Folder" size={18} className="text-accent shrink-0" weight="fill" />
+          <Folder size={18} className="text-accent shrink-0" weight="fill" />
           <div>
             <h3 className="text-sm font-medium text-text-primary">
               {project.name}
@@ -57,7 +57,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="mt-3 flex justify-end">
         <span className="flex items-center gap-1 text-xs text-accent">
-          View details <Icon name="ArrowRight" size={12} weight="bold" />
+          View details <ArrowRight size={12} weight="bold" />
         </span>
       </div>
     </div>

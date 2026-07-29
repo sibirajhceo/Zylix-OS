@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Icon } from "@/components/ui/Icon";
 import type { Metadata } from "next";
+import { Compass } from "@phosphor-icons/react/ssr";
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function NotFoundPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-dvh px-4 text-center">
-      <Icon name="Compass" size={40} className="text-muted mb-4" weight="light" />
+      <Compass size={40} className="text-muted mb-4" weight="light" />
       <h1 className="text-xl font-semibold text-text-primary mb-2">
         Page not found
       </h1>

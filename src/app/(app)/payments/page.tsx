@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Icon } from "@/components/ui/Icon";
+import { CurrencyInr } from "@phosphor-icons/react/ssr";
 import { mockPayments, totalPending } from "@/data/mock-payments";
 import { PaymentCard } from "@/components/operational/PaymentItem";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -20,7 +20,7 @@ export default function PaymentsPage() {
     return (
       <div className="p-4 lg:p-6 max-w-3xl mx-auto">
         <EmptyState
-          icon="CurrencyInr"
+          icon={<CurrencyInr size={32} weight="light" />}
           title="No payments"
           description="Payment records will appear here."
         />
@@ -31,7 +31,7 @@ export default function PaymentsPage() {
   return (
     <div className="p-4 lg:p-6 max-w-3xl mx-auto">
       <div className="flex items-center gap-2.5 mb-6">
-        <Icon name="CurrencyInr" size={20} className="text-accent" weight="fill" />
+        <CurrencyInr size={20} className="text-accent" weight="fill" />
         <h1 className="text-lg font-semibold tracking-tight">Payments</h1>
       </div>
 

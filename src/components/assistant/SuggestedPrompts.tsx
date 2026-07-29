@@ -1,4 +1,4 @@
-import { Icon } from "@/components/ui/Icon";
+import { Lightning } from "@phosphor-icons/react/ssr";
 import { suggestedPrompts } from "@/data/mock-conversations";
 
 export function SuggestedPrompts() {
@@ -9,7 +9,7 @@ export function SuggestedPrompts() {
           key={prompt.id}
           className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-text-secondary bg-surface-elevated hover:bg-border rounded-full transition-colors"
         >
-          <Icon name="Lightning" size={12} className="text-accent" weight="fill" />
+          <Lightning size={12} className="text-accent" weight="fill" />
           {prompt.text}
         </button>
       ))}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Icon } from "@/components/ui/Icon";
+import { ClockCounterClockwise, ArrowUUpLeft } from "@phosphor-icons/react/ssr";
 import { mockActivity } from "@/data/mock-activity";
 import { ActivityRecordCard } from "@/components/operational/ActivityItem";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -17,7 +17,7 @@ export default function ActivityPage() {
     return (
       <div className="p-4 lg:p-6 max-w-3xl mx-auto">
         <EmptyState
-          icon="ClockCounterClockwise"
+          icon={<ClockCounterClockwise size={32} weight="light" />}
           title="No activity yet"
           description="Your recent actions will appear here."
         />
@@ -29,8 +29,7 @@ export default function ActivityPage() {
     <div className="p-4 lg:p-6 max-w-3xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2.5">
-          <Icon
-            name="ClockCounterClockwise"
+          <ClockCounterClockwise
             size={20}
             className="text-accent"
             weight="fill"
@@ -42,7 +41,7 @@ export default function ActivityPage() {
           className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-muted hover:text-text-secondary border border-border rounded-lg hover:bg-surface transition-colors"
           aria-label="Undo (preview only)"
         >
-          <Icon name="ArrowUUpLeft" size={14} weight="regular" />
+          <ArrowUUpLeft size={14} weight="regular" />
           Undo
         </button>
       </div>

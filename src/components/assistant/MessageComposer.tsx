@@ -1,6 +1,6 @@
 "use client";
 
-import { Icon } from "@/components/ui/Icon";
+import { PaperPlaneRight, Microphone } from "@phosphor-icons/react/ssr";
 
 export function MessageComposer() {
   return (
@@ -23,14 +23,14 @@ export function MessageComposer() {
             className="p-2 rounded-lg text-muted hover:text-text-secondary hover:bg-surface-elevated transition-colors"
             aria-label="Voice input"
           >
-            <Icon name="Microphone" size={18} weight="regular" />
+            <Microphone size={18} weight="regular" />
           </button>
           <button
             type="button"
             className="p-2 rounded-lg bg-accent text-canvas hover:bg-accent-hover transition-colors"
             aria-label="Send message"
           >
-            <Icon name="PaperPlaneRight" size={18} weight="fill" />
+            <PaperPlaneRight size={18} weight="fill" />
           </button>
         </div>
       </div>
