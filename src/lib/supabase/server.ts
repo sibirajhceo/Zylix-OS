@@ -12,21 +12,14 @@ export async function createClient() {
         getAll() {
           return cookieStore.getAll();
         },
-        setAll(cookiesToSet) {
+        setAll(cookiesToSet, _headers) {
           try {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
             );
-          } catch (error) {
-            if (
-              error instanceof Error &&
-              "digest" in error &&
-              error.digest === "NEXT_SERVER_COMPONENT_COOKIE_MUTATION"
-            ) {
-              // Expected when called from a Server Component.
-              return;
-            }
-            throw error;
+          } catch {
+            // Server Components cannot write cookies.
+            // This is safe once the Proxy refreshes and persists sessions.
           }
         },
       },
