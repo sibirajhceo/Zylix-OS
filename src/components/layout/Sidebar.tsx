@@ -9,9 +9,9 @@ import {
   Hourglass,
   CurrencyInr,
   ClockCounterClockwise,
-  SignOut,
   Command,
 } from "@phosphor-icons/react/ssr";
+import { LogoutButton } from "../auth/LogoutButton";
 
 const navItems = [
   { href: "/", label: "Assistant", icon: ChatCircleDots },
@@ -66,13 +66,7 @@ export function Sidebar() {
       </div>
 
       <div className="p-2 border-t border-border">
-        <Link
-          href="/login"
-          className="flex items-center gap-2.5 px-3 py-2 rounded-md text-sm text-muted hover:text-text-secondary hover:bg-surface-elevated transition-colors"
-        >
-          <SignOut size={18} weight="regular" />
-          Sign out
-        </Link>
+        <LogoutButton />
       </div>
     </aside>
   );
